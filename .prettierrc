@@ -1,0 +1,14 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "printWidth": 120,
+  "arrowParens": "always",
+  "endOfLine": "auto",
+  "importOrderCaseInsensitive": true,
+  "importOrderParserPlugins": ["typescript", "classProperties", "decorators-legacy"],
+  "importOrder": ["<THIRD_PARTY_MODULES>", "^@/(.*)$", "^../(.*)$", "^./(.*)$"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

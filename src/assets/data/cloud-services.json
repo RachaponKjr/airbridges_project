@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "color": "#1779EA",
+      "tage": "SETUP",
+      "haderText": "CloudStart",
+      "subText": "Start delivering value in the Cloud",
+      "detail": [
+        "Assess which cloud platform is right foryour business",
+        "Translate your business requirements toa cloud solution design",
+        "Estimate and optimise the operationalcost of using the",
+        "Cloud Build your cloud solutions, withdetailed handover and training"
+      ]
+    },
+    {
+      "color": "#55E1DD",
+      "tage": "MIGRATION",
+      "haderText": "CloudShift",
+      "subText": "Migrate your workload to the Cloud",
+      "detail": [
+        "Translate an existing on-premises workload to a cloud solution design, or map your journey between cloud providers",
+        "Design a migration playbook to maximise success and minimise risk",
+        "Estimate and optimise the operational cost of your new cloud solutions",
+        "Perform the cloud migration for you, with detailed handover and training"
+      ]
+    },
+    {
+      "color": "#9747FF",
+      "tage": "DEVOPS",
+      "haderText": "CloudPace",
+      "subText": "Innovate faster with DevOps in the Cloud",
+      "detail": [
+        "Review your existing DevOps processes and goals",
+        "Design a solution using the best-fit cloud services",
+        "Estimate and optimise the operational cost of your new cloud solutions",
+        "Build your cloud DevOps solution, with detailed handover and training"
+      ]
+    }
+  ]
+}
