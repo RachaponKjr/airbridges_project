@@ -21,17 +21,17 @@ function CloudDetailBox({ reverse, details, subtitel, tage, titel, image, color 
         quality={100}
         width={100}
         height={100}
-        className="w-full lg:w-[500px] shrink-0 max-w-full aspect-video lg:aspect-[8/11] rounded-3xl lg:rounded-[53px] bg-red-400"
+        className="w-full lg:w-[500px] shrink-0 max-w-full aspect-video lg:aspect-[8/11] rounded-3xl lg:rounded-[53px]"
       />
       <div className="text-white space-y-6 self-start grow px-4">
-        <div className="space-y-2">
-          <span className={`text-3xl`} style={{ color: color }}>
+        <div className="space-y-3 lg:space-y-2">
+          <span className={`text-base lg:text-3xl`} style={{ color: color }}>
             {tage}
           </span>
-          <h2 className="text-[54px]">{titel}</h2>
-          <span className="text-xl text-white/80 font-bold">{subtitel}</span>
+          <h2 className="text-2xl lg:text-[54px]">{titel}</h2>
+          <span className="text-sm lg:text-xl text-white/80 font-bold">{subtitel}</span>
         </div>
-        <div className="text-2xl space-y-14 text-body">
+        <div className="text-sm lg:text-2xl space-y-14 text-body">
           {details.map((item, index) => {
             return <p key={index + 1}>{item}</p>
           })}

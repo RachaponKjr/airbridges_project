@@ -31,12 +31,59 @@
   background: var(--bg-g-blue);
 }
 
+.bg-gradient-blue {
+  background: radial-gradient(149.18% 76.27% at 50% 124.88%, #73a1ff 0.5%, #8db1fc 23.5%, #003094 55%, #020816 100%);
+}
+
+.bg-g-box-speed {
+  background: rgb(0,48,148);
+background: linear-gradient(0deg, rgba(0,48,148,1) 0%, rgba(0,48,148,1) 5%, rgba(0,48,148,0) 40%);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .bg-image-start {
   background-image: url(../assets/images/bg-star.png) !important;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 6rem !important;
+}
+.swiper-pagination-bullet-active {
+  background: rgb(102, 93, 205) !important;
+  background: -moz-linear-gradient(
+    135deg,
+    rgba(102, 93, 205, 1) 0%,
+    #5fa4e6 55%,
+    rgba(210, 171, 103, 1) 100%
+  ) !important;
+  background: -webkit-linear-gradient(
+    135deg,
+    rgba(102, 93, 205, 1) 0%,
+    rgba(95, 164, 230, 1) 55%,
+    rgba(210, 171, 103, 1) 100%
+  ) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 93, 205, 1) 0%,
+    rgba(95, 164, 230, 1) 55%,
+    rgba(210, 171, 103, 1) 100%
+  ) !important;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background: rgba(51, 51, 51, 1);
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 1.5rem !important;
+  }
 }
 
 @media (max-width: 1024px) {
