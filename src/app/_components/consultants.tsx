@@ -21,7 +21,7 @@ function Consultants() {
         className="max-w-[1024px] mx-auto text-center text-white space-y-4">
         <h2 className="text-2xl lg:text-6xl font-bold">Our Consultants Are</h2>
       </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 container mx-auto">
         <div className="flex flex-col items-center gap-8 lg:gap-16">
           <div className="min-w-[160px] lg:min-w-[230px] aspect-square rounded-full grid place-content-center border border-white/80 bg-box-gradient shadow-[0px_0px_44.492px_0px_#3F3DB0]">
             <Image src={accredited} alt={'accredited'} className="w-[70px] lg:w-[100px] aspect-square" />
