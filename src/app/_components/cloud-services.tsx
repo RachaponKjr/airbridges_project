@@ -17,6 +17,8 @@ import Image from 'next/image'
 import arrow from '@/assets/svg/icon/arrow.svg'
 import Button from '@/components/ui/button'
 import { NavigationOptions } from 'swiper/types'
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from './choose-cloud'
 
 function CloudServices() {
   const { data } = dataCard
@@ -45,17 +47,22 @@ function CloudServices() {
         className="hidden lg:block absolute inset-0 bg-[#003094] mix-blend-color w-full h-full opacity-70"
         style={{ filter: 'brightness(80%)' }}
       />
-      <div className="z-50 container mx-auto space-y-12 lg:my-8">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="z-50 container mx-auto space-y-12 lg:my-8">
         <div className="flex flex-col justify-start items-center gap-20 container mx-auto">
           <div className="space-y-2 lg:space-y-6 flex flex-col items-center pt-14">
-            <div className="border border-white/10 rounded-full px-8 py-2 shadow-[var(--box-shadow-chip)] bg-[linear-gradient(93deg,rgba(255,255,255,0.2),rgba(255,255,255,0.0))]">
+            <motion.div variants={fadeInUp} className="border border-white/10 rounded-full px-8 py-2 shadow-[var(--box-shadow-chip)] bg-[linear-gradient(93deg,rgba(255,255,255,0.2),rgba(255,255,255,0.0))]">
               <span className="text-white text-sm lg:text-2xl">Our Cloud Services</span>
-            </div>
-            <div className="text-center w-full lg:w-[1054px] max-w-full text-2xl lg:text-[57.6px]">
+            </motion.div>
+            <motion.div variants={fadeInUp} className="text-center w-full lg:w-[1054px] max-w-full text-2xl lg:text-[57.6px]">
               <h3 className="text-white text-2xl lg:text-5xl">
                 Here for you at each stage of your journey to the cloud.
               </h3>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -86,32 +93,36 @@ function CloudServices() {
         >
           {data.map((item, index) => (
             <SwiperSlide key={index} className="p-4">
-              <BoxBody key={index} className="aspect-[8/16] !p-10" anime>
-                <BoxContent>
-                  <div className="text-center space-y-1">
-                    <span className="uppercase text-lg lg:text-2xl" style={{ color: `${item.color}` }}>
-                      {item.tage}
-                    </span>
-                    <h3 className="text-white text-xl lg:text-[32px]">{item.haderText}</h3>
-                    <span className="text-body text-sm lg:text-lg">{item.subText}</span>
-                  </div>
-                  <Divider className="my-5" />
-                  <div>
-                    <ul className={cn('text-body text-sm lg:text-lg space-y-10')}>
-                      {item.detail.map((datail, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <Tick color={item.color} size={22} />
-                          {datail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </BoxContent>
-              </BoxBody>
+              <motion.div
+                transition={{ duration: 0.5, ease: 'easeOut', type: 'spring', stiffness: 260, damping: 20 }}
+                variants={fadeInUp}>
+                <BoxBody key={index} className="aspect-[8/16] !p-10" anime>
+                  <BoxContent>
+                    <div className="text-center space-y-1">
+                      <span className="uppercase text-lg lg:text-2xl" style={{ color: `${item.color}` }}>
+                        {item.tage}
+                      </span>
+                      <h3 className="text-white text-xl lg:text-[32px]">{item.haderText}</h3>
+                      <span className="text-body text-sm lg:text-lg">{item.subText}</span>
+                    </div>
+                    <Divider className="my-5" />
+                    <div>
+                      <ul className={cn('text-body text-sm lg:text-lg space-y-10')}>
+                        {item.detail.map((datail, i) => (
+                          <li key={i} className="flex items-center gap-3">
+                            <Tick color={item.color} size={22} />
+                            {datail}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </BoxContent>
+                </BoxBody>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
 
       {/* ปุ่มกดเลื่อน Swiper */}
       <div className="z-20 flex gap-10 lg:hidden">
@@ -121,7 +132,7 @@ function CloudServices() {
 
       {/* Button */}
       <div className="mt-0 lg:mt-24 z-50">
-        <Button link="https://cal.com/airbridges" titel="Book a Free Consultation" />
+        <Button link="https://cal.com/airbridges" titel="Book a Free Consultation" animation />
       </div>
     </section>
   )

@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 import bgstar from '@/assets/images/bg-star.png'
@@ -8,6 +9,8 @@ import check from '@/assets/svg/icon/check.svg'
 import setting from '@/assets/svg/icon/setting.svg'
 
 import Image from 'next/image'
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from './choose-cloud'
 function Different() {
   const different = [
     {
@@ -36,7 +39,11 @@ function Different() {
   ]
 
   return (
-    <section
+    <motion.section
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
       className="bg-cover bg-bottom relative w-full h-max px-4 lg:py-32 lg:p-32 flex flex-col gap-20"
       style={{ backgroundImage: `url(${bgstar.src})` }}
     >
@@ -45,14 +52,17 @@ function Different() {
       {/* Layer ที่ช่วยปรับสี Overlay */}
       <div className="absolute inset-0 bg-[#003094] mix-blend-color w-full h-full opacity-80"></div>
       <div className="max-w-[1024px] mx-auto container z-10 space-y-20">
-        <div className="text-center text-white  space-y-4">
+        <motion.div variants={fadeInUp} className="text-center text-white  space-y-4">
           <h2 className="text-2xl lg:text-6xl font-bold">What makes us different?</h2>
           <p className="text-sm lg:text-2xl leading-loose">Automation Consultants is able to:</p>
-        </div>
+        </motion.div>
         <div className="flex flex-col gap-10 lg:gap-28 px-2 lg:px-12">
           {different.map((item, index) => {
             return (
-              <div key={index + 1} className="flex items-center gap-4 lg:gap-10">
+              <motion.div
+                variants={fadeInUp}
+                transition={{ duration: 0.5, ease: 'easeOut', type: 'spring', stiffness: 260, damping: 20 }}
+                key={index + 1} className="flex items-center gap-4 lg:gap-10">
                 <div className="min-w-[60px] lg:min-w-[105px] aspect-square rounded-full grid place-content-center border border-white/80 bg-box-gradient shadow-[0px_0px_44.492px_0px_#3F3DB0]">
                   <Image src={item.image} alt={item.title} className="w-[30px] lg:w-[62px] aspect-square" />
                 </div>
@@ -60,12 +70,12 @@ function Different() {
                   <h3 className="text-base lg:text-[40px] text-white font-bold">{item.title}</h3>
                   <p className="text-sm lg:text-2xl text-body">{item.description}</p>
                 </div>
-              </div>
+              </motion.div>
             )
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

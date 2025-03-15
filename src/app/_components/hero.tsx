@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import bgstar from '@/assets/images/bg-star.png'
 import { cn } from '@/libs/cn'
 
@@ -9,8 +10,18 @@ import az from '@/assets/images/az.png'
 import huawel from '@/assets/images/huawel.png'
 import Image from 'next/image'
 import Button from '@/components/ui/button'
+import { useAnimation, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 function Hero() {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({ threshold: 0.5 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [inView, controls]);
   return (
     <>
       {/* ส่วนที่ 1 */}
@@ -26,7 +37,12 @@ function Hero() {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center lg:justify-center my-14 lg:my-0 h-full text-white text-center">
-          <div className="flex flex-col gap-8">
+          <motion.div
+            ref={ref}
+            animate={controls}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col gap-8">
             <h1 className="text-[48px] lg:text-[80px] font-bold leading-snug lg:leading-none">
               Empowering the Future with Cloud Innovation{' '}
             </h1>
@@ -35,17 +51,22 @@ function Hero() {
               and innovative through cloud technology, our team of cloud specialists is here to help you navigate your
               journey in the Cloud.
             </p>
-          </div>
+          </motion.div>
 
           {/* Logo Icons */}
-          <div className="my-12 grid grid-cols-4 gap-4 lg:gap-8">
+          <motion.div
+            ref={ref}
+            animate={controls}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.5 }}
+            className="my-12 grid grid-cols-4 gap-4 lg:gap-8">
             {[aws, az, google, huawel].map((item, index) => (
               <div
                 key={index}
                 className="w-[80px] lg:w-[100px] max-w-full aspect-square grid place-content-center bg-white rounded-full relative"
               >
                 <Image
-                  src={item} // ✅ ใช้ item แทน aws
+                  src={item}
                   alt="cloud-logo"
                   width={60}
                   height={60}
@@ -53,9 +74,9 @@ function Hero() {
                 />
               </div>
             ))}
-          </div>
+          </motion.div>
           {/* Button */}
-          <Button link="https://cal.com/airbridges" titel="Book a Free Consultation" />
+          <Button link="https://cal.com/airbridges" titel="Book a Free Consultation" animation />
         </div>
       </section>
     </>

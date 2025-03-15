@@ -7,6 +7,8 @@ import az from '@/assets/images/az.png'
 import huawel from '@/assets/images/huawel.png'
 import Image from 'next/image'
 import { BoxBody, BoxContent } from '@/components/ui/box'
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from './choose-cloud'
 
 function Platfroms() {
   const [platform, setPlatform] = useState<number>(1)
@@ -44,18 +46,28 @@ function Platfroms() {
 
   return (
     <section className="bg-[#020816] lg:bg-[radial-gradient(circle_800px_at_bottom_left,#003094_0%,#003094_24%,#020816_100%)] h-max px-4 lg:py-32 lg:p-32 ">
-      <div className="flex flex-col justify-start items-center gap-10 lg:gap-14 container mx-auto">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="flex flex-col justify-start items-center gap-10 lg:gap-14 container mx-auto">
         <div className="space-y-2 lg:space-y-6 flex flex-col items-center pt-14">
-          <div className="border border-white/10 rounded-full px-8 py-2 shadow-[var(--box-shadow-chip)] bg-[linear-gradient(93deg,rgba(255,255,255,0.2),rgba(255,255,255,0.0))]">
+          <motion.div
+            variants={fadeInUp}
+            className="border border-white/10 rounded-full px-8 py-2 shadow-[var(--box-shadow-chip)] bg-[linear-gradient(93deg,rgba(255,255,255,0.2),rgba(255,255,255,0.0))]">
             <span className="text-white text-sm lg:text-2xl">Platforms</span>
-          </div>
-          <div className="text-center">
+          </motion.div>
+          <motion.div variants={fadeInUp} className="text-center">
             <h3 className="text-white text-2xl lg:text-5xl">4 Major Cloud Platforms</h3>
-          </div>
+          </motion.div>
         </div>
         <div className="grid grid-cols-4 gap-4 lg:gap-20 w-full">
           {[aws, az, google, huawel].map((item, index) => (
-            <div
+            <motion.div
+              animate={{ scale: platform === index + 1 ? 1.1 : 1 }}
+              transition={{ duration: 0.5, ease: 'easeOut', type: 'spring', stiffness: 260, damping: 20 }}
+              variants={fadeInUp}
               key={index}
               onClick={() => handleClick(index + 1)}
               className="w-full cursor-pointer max-w-full aspect-square grid place-content-center bg-white rounded-full relative"
@@ -65,19 +77,21 @@ function Platfroms() {
                 alt="cloud-logo"
                 className="absolute inset-0 m-auto w-[60px] md:w-[100px] lg:w-[140px]"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
         {/* Box */}
-        <BoxBody className="rounded-[18px]">
-          <BoxContent className="space-y-6 lg:space-y-2">
-            <h3 className="text-white text-2xl">{platformsData[platform - 1].name}</h3>
-            <p className="text-body text-base lg:text-lg leading-loose lg:leading-relaxed">
-              {platformsData[platform - 1].description}
-            </p>
-          </BoxContent>
-        </BoxBody>
-      </div>
+        <motion.div variants={fadeInUp}>
+          <BoxBody className="rounded-[18px]">
+            <BoxContent className="space-y-6 lg:space-y-2">
+              <h3 className="text-white text-2xl">{platformsData[platform - 1].name}</h3>
+              <p className="text-body text-base lg:text-lg leading-loose lg:leading-relaxed">
+                {platformsData[platform - 1].description}
+              </p>
+            </BoxContent>
+          </BoxBody>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
