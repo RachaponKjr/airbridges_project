@@ -2,6 +2,7 @@ import { AlignJustify } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import Button from './ui/button'
+import Link from 'next/link'
 
 function Navbar() {
   return (
@@ -10,10 +11,12 @@ function Navbar() {
         <Image src={'/logo.png'} alt="logo" width={150} height={150} />
         <div className="hidden lg:flex gap-[50px]">
           <ul className="flex text-body items-center gap-12 text-base font-medium">
-            <li className="text-white">Home</li>
-            <li>Solutions</li>
-            <li>Services</li>
-            <li>Contact</li>
+            <li className="text-white">
+              <Link href="/">Home</Link>
+            </li>
+            <li><Link href="/about">Solutions</Link></li>
+            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
           </ul>
           <Button link="https://cal.com/airbridges" titel="Book a Free Consultation" />
         </div>
