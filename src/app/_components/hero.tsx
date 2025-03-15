@@ -55,7 +55,7 @@ function Hero() {
             ))}
           </div>
           {/* Button */}
-          <Button link='https://cal.com/airbridges' titel='Book a Free Consultation' />
+          <Button link="https://cal.com/airbridges" titel="Book a Free Consultation" />
         </div>
       </section>
     </>

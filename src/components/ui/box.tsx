@@ -22,7 +22,8 @@ function BoxBody({ children, className, style, anime }: Readonly<BoxBodyProps>) 
         bg-[radial-gradient(48.77%_44.41%_at_51.18%_-3.02%,_#071738_0%,_#020816_100%)]
      transition-all duration-300 ease-in-out`,
 
-        anime && `hover:shadow-[0px_0px_30px_rgba(0,48,200,0.9)] 
+        anime &&
+          `hover:shadow-[0px_0px_30px_rgba(0,48,200,0.9)] 
                   hover:border-white/50 backdrop-blur-[54.38px]`,
 
         className

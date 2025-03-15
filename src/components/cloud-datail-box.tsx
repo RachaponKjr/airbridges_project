@@ -14,7 +14,12 @@ interface CloudProps {
 
 function CloudDetailBox({ reverse, details, subtitel, tage, titel, image, color = '#1779EA' }: CloudProps) {
   return (
-    <div className={cn(reverse ? 'lg:flex-row-reverse' : 'lg:flex-row', 'flex flex-col gap-7 lg:gap-16 items-center w-full container mx-auto')}>
+    <div
+      className={cn(
+        reverse ? 'lg:flex-row-reverse' : 'lg:flex-row',
+        'flex flex-col gap-7 lg:gap-16 items-center w-full container mx-auto'
+      )}
+    >
       <Image
         src={image}
         alt={titel}

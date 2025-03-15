@@ -36,8 +36,8 @@
 }
 
 .bg-g-box-speed {
-  background: rgb(0,48,148);
-background: linear-gradient(0deg, rgba(0,48,148,1) 0%, rgba(0,48,148,1) 5%, rgba(0,48,148,0) 40%);
+  background: rgb(0, 48, 148);
+  background: linear-gradient(0deg, rgba(0, 48, 148, 1) 0%, rgba(0, 48, 148, 1) 5%, rgba(0, 48, 148, 0) 40%);
 }
 
 body {

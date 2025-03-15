@@ -15,7 +15,7 @@ function Navbar() {
             <li>Services</li>
             <li>Contact</li>
           </ul>
-          <Button link='https://cal.com/airbridges' titel='Book a Free Consultation' />
+          <Button link="https://cal.com/airbridges" titel="Book a Free Consultation" />
         </div>
         <AlignJustify color="white" size={32} className="block lg:hidden" />
       </div>

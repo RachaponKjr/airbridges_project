@@ -20,7 +20,7 @@ export default function Home() {
       <CustomerSuccess />
       <ProcessWork />
       <Different />
-      <div className='bg-gradient-blue pb-10 lg:pb-0'>
+      <div className="bg-gradient-blue pb-10 lg:pb-0">
         <Consultants />
         <WhatYouWant />
       </div>

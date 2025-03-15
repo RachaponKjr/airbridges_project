@@ -34,9 +34,11 @@ function CloudServices() {
   }, [])
 
   return (
-    <section className={cn(
-      'relative bg-image-start w-full h-max pb-14 lg:pb-0 bg-cover scale-100 bg-bottom flex justify-center items-center flex-col gap-10 lg:gap-0'
-    )}>
+    <section
+      className={cn(
+        'relative bg-image-start w-full h-max pb-14 lg:pb-0 bg-cover scale-100 bg-bottom flex justify-center items-center flex-col gap-10 lg:gap-0'
+      )}
+    >
       {/* Layer ที่ช่วยปรับสี Overlay */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent to-[#003094] lg:to-[#020816] opacity-100 lg:opacity-70" />
       <div
@@ -50,7 +52,9 @@ function CloudServices() {
               <span className="text-white text-sm lg:text-2xl">Our Cloud Services</span>
             </div>
             <div className="text-center w-full lg:w-[1054px] max-w-full text-2xl lg:text-[57.6px]">
-              <h3 className="text-white text-2xl lg:text-5xl">Here for you at each stage of your journey to the cloud.</h3>
+              <h3 className="text-white text-2xl lg:text-5xl">
+                Here for you at each stage of your journey to the cloud.
+              </h3>
             </div>
           </div>
         </div>
@@ -70,7 +74,7 @@ function CloudServices() {
             1024: {
               slidesPerView: 3,
               spaceBetween: 0,
-            }
+            },
           }}
           spaceBetween={46}
           navigation={{
@@ -110,14 +114,14 @@ function CloudServices() {
       </div>
 
       {/* ปุ่มกดเลื่อน Swiper */}
-      <div className='z-20 flex gap-10 lg:hidden'>
-        <Image src={arrow} alt='Previous' width={70} height={70} className='cursor-pointer button-prev' />
-        <Image src={arrow} alt='Next' width={70} height={70} className='rotate-180 cursor-pointer button-next' />
+      <div className="z-20 flex gap-10 lg:hidden">
+        <Image src={arrow} alt="Previous" width={70} height={70} className="cursor-pointer button-prev" />
+        <Image src={arrow} alt="Next" width={70} height={70} className="rotate-180 cursor-pointer button-next" />
       </div>
 
       {/* Button */}
-      <div className='mt-0 lg:mt-24 z-50'>
-        <Button link='https://cal.com/airbridges' titel='Book a Free Consultation' />
+      <div className="mt-0 lg:mt-24 z-50">
+        <Button link="https://cal.com/airbridges" titel="Book a Free Consultation" />
       </div>
     </section>
   )
