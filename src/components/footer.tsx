@@ -54,16 +54,16 @@ function Footer() {
               </div>
 
               <div className="flex flex-col grow gap-6">
-                <span className="text-white">Quick Links</span>
+                <span className="text-white">Follow</span>
                 <div className="text-body flex flex-col gap-5">
                   <Link href={'####'}>
-                    <span>Home</span>
+                    <span>Facebook</span>
                   </Link>
                   <Link href={'####'}>
-                    <span>Solutions</span>
+                    <span>Linkedin</span>
                   </Link>
                   <Link href={'####'}>
-                    <span>Services</span>
+                    <span>Instragram</span>
                   </Link>
                 </div>
               </div>
