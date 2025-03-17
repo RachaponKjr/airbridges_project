@@ -12,10 +12,12 @@ import Image from 'next/image'
 import Button from '@/components/ui/button'
 import { useAnimation, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useScroll } from '@/contexts/ScrollContext'
 
 function Hero() {
   const controls = useAnimation();
   const { ref, inView } = useInView({ threshold: 0.5 });
+  const { sectionRefs } = useScroll()
 
   useEffect(() => {
     if (inView) {
@@ -26,6 +28,7 @@ function Hero() {
     <>
       {/* ส่วนที่ 1 */}
       <section
+        ref={sectionRefs.hero}
         className={cn(
           'relative w-full h-max lg:h-screen pb-14 lg:pb-0 bg-cover bg-bottom flex justify-center flex-col px-4 lg:px-[210px]'
         )}

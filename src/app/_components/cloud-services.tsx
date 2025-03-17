@@ -19,10 +19,12 @@ import Button from '@/components/ui/button'
 import { NavigationOptions } from 'swiper/types'
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from './choose-cloud'
+import { useScroll } from '@/contexts/ScrollContext'
 
 function CloudServices() {
   const { data } = dataCard
   const swiperRef = useRef<SwiperRef | null>(null)
+  const { sectionRefs } = useScroll()
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -37,6 +39,7 @@ function CloudServices() {
 
   return (
     <section
+      ref={sectionRefs.services}
       className={cn(
         'relative bg-image-start w-full h-max pb-14 lg:pb-0 bg-cover scale-100 bg-bottom flex justify-center items-center flex-col gap-10 lg:gap-0'
       )}

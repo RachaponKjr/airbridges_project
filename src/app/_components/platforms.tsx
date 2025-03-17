@@ -9,9 +9,11 @@ import Image from 'next/image'
 import { BoxBody, BoxContent } from '@/components/ui/box'
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from './choose-cloud'
+import { useScroll } from '@/contexts/ScrollContext'
 
 function Platfroms() {
   const [platform, setPlatform] = useState<number>(1)
+  const { sectionRefs } = useScroll()
 
   const platformsData = [
     {
@@ -52,7 +54,7 @@ function Platfroms() {
         whileInView="visible"
         viewport={{ once: true }}
         className="flex flex-col justify-start items-center gap-10 lg:gap-14 container mx-auto">
-        <div className="space-y-2 lg:space-y-6 flex flex-col items-center pt-14">
+        <div ref={sectionRefs.solutions} className="space-y-2 lg:space-y-6 flex flex-col items-center pt-14">
           <motion.div
             variants={fadeInUp}
             className="border border-white/10 rounded-full px-8 py-2 shadow-[var(--box-shadow-chip)] bg-[linear-gradient(93deg,rgba(255,255,255,0.2),rgba(255,255,255,0.0))]">

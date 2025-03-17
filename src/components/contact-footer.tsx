@@ -1,10 +1,13 @@
+'use client';
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Input from './ui/input'
+import { useScroll } from '@/contexts/ScrollContext'
 
 function ContactFooter() {
+  const { sectionRefs } = useScroll()
   return (
-    <div className="py-12 flex flex-col px-5 lg:px-0 lg:flex-row gap-11 lg:gap-24 container mx-auto">
+    <div ref={sectionRefs.contact} className="py-12 flex flex-col px-5 lg:px-0 lg:flex-row gap-11 lg:gap-24 container mx-auto">
       <div className="text-white w-full lg:max-w-[600px] space-y-3 text-center lg:text-start">
         <h4 className="text-2xl lg:text-[56px] font-bold leading-none">Let’s connect constellations</h4>
         <p className="text-white/80 text-sm lg:text-2xl font-normal">
