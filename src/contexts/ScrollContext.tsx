@@ -1,6 +1,6 @@
 'use client';
 /* eslint-disable react-hooks/rules-of-hooks */
-import { createContext, useContext, useRef, ReactNode, useMemo } from "react";
+import { createContext, useContext, useRef, ReactNode } from "react";
 
 interface ScrollContextType {
   sectionRefs: Record<string, React.RefObject<HTMLElement | null>>;
