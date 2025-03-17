@@ -1,9 +1,7 @@
-'use client';
-/* eslint-disable react-hooks/rules-of-hooks */
 import { createContext, useContext, useRef, ReactNode } from "react";
 
 interface ScrollContextType {
-  sectionRefs: Record<string, React.RefObject<HTMLElement | null>>;
+  sectionRefs: Record<string, React.RefObject<HTMLDivElement | null>>; // เปลี่ยนเป็น HTMLDivElement
   scrollToSection: (section: string) => void;
 }
 
@@ -12,11 +10,11 @@ const ScrollContext = createContext<ScrollContextType | null>(null);
 
 // สร้าง Provider
 export const ScrollProvider = ({ children }: { children: ReactNode }) => {
-  // เอา useRef ออกมาใช้ที่ระดับบนสุด
-  const sectionRefs: Record<string, React.RefObject<HTMLElement | null>> = {
-    solutions: useRef<HTMLElement>(null),
-    services: useRef<HTMLElement>(null),
-    contact: useRef<HTMLElement>(null),
+  // ใช้ HTMLDivElement สำหรับ ref ที่คาดว่าจะใช้กับ <div>
+  const sectionRefs: Record<string, React.RefObject<HTMLDivElement | null>> = {
+    solutions: useRef<HTMLDivElement>(null),
+    services: useRef<HTMLDivElement>(null),
+    contact: useRef<HTMLDivElement>(null),
   };
 
   const scrollToSection = (section: string) => {
