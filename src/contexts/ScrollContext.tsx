@@ -1,3 +1,4 @@
+'use client';
 import { createContext, useContext, useRef, ReactNode } from "react";
 
 interface ScrollContextType {
